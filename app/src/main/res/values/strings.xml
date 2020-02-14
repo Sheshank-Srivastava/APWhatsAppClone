@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">APUWhatsAppClone</string>
+    <string name="enter_your_email">Enter Your email</string>
+    <string name="enter_user_name_here">Enter user name here</string>
+    <string name="enter_your_password_here">Enter Your password here</string>
+    <string name="sign_up">Sign Up</string>
+    <string name="login">Login</string>
+    
+    
+    <string name="back4app_server_url">https://parseapi.back4app.com/</string>
+    <string name="back4app_app_id">by69mAF2zGgmG7k6ZzgEG2yhPHJtu2sCxfDqvKZ1</string>
+    <string name="back4app_client_key">k1yPCJN0vSd82Dr6UOss60dMrXpkwnXmbyFXDruU</string>
+
 </resources>
