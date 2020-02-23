@@ -4,24 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.WhatsAppActivity">
-
-    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-        android:id="@+id/swipe_userList"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+    tools:context=".activity.ChatActivity">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyc_UserList"
-        android:layout_width="match_parent"
+        android:id="@+id/recyc_chat"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>
