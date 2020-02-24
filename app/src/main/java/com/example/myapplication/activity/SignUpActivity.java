@@ -3,6 +3,7 @@ package com.example.myapplication.activity;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -29,6 +30,9 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
 
         btn_SignUp = findViewById(R.id.btn_SignupEnter);
         btn_Login = findViewById(R.id.btn_LogSignup);
+
+        btn_SignUp.setOnClickListener(this);
+        btn_Login.setOnClickListener(this);
     }
     @Override
     public void onClick(View v) {
@@ -62,6 +66,8 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
 
                 break;
             case R.id.btn_LogSignup:
+                startActivity(new Intent(this,LoginActivity.class));
+                finish();
                 break;
         }
     }
