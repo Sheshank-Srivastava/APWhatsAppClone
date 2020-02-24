@@ -7,12 +7,16 @@ import android.app.ActionBar;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.myapplication.R;
 
-public class ChatActivity extends AppCompatActivity {
+import java.util.ArrayList;
 
+public class ChatActivity extends AppCompatActivity {
+    private ListView chatListView;
+    private ArrayList<String> chatsList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
