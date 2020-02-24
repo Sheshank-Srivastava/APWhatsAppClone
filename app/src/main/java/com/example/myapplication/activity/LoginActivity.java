@@ -17,8 +17,7 @@ import com.parse.ParseUser;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
 
-    EditText et_email, et_password;
-
+    EditText et_Email,  et_Password;
     Button btn_SignUp, btn_Login;
 
     @Override
@@ -26,15 +25,16 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
-        et_email = findViewById(R.id.et_emaillogin);
-        et_password = findViewById(R.id.et_password);
 
-        btn_Login = findViewById(R.id.btn_LoginEnter);
+        // Variable defination
+        et_Email = findViewById(R.id.et_emaillogin);
+        et_Password = findViewById(R.id.et_password);
+
         btn_SignUp = findViewById(R.id.btn_signup);
+        btn_Login = findViewById(R.id.btn_LoginEnter);
 
         btn_SignUp.setOnClickListener(this);
         btn_Login.setOnClickListener(this);
-
     }
 
     @Override
@@ -42,11 +42,15 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         switch (v.getId()) {
             case R.id.btn_LoginEnter:
 
-                final String email = et_email.getText().toString().trim();
-                final String password = et_password.getText().toString().trim();
+                final String email = et_Email.getText().toString().trim();
+                final String password = et_Password.getText().toString().trim();
+                if (email.equals("") || password.equals("")) {
+                    Toast.makeText(this, "Email,UserName, Password is required", Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
                 final ProgressDialog dialog = new ProgressDialog(this);
-                dialog.setMessage("Logging in");
+                dialog.setMessage("Logging In");
                 dialog.setCancelable(false);
                 dialog.show();
 
@@ -56,17 +60,16 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     public void done(ParseUser user, ParseException e) {
                         dialog.dismiss();
                         if (user==null || e!=null) return;
-                        Toast.makeText(LoginActivity.this, "Log in s sucessful", Toast.LENGTH_SHORT).show();
 
+                        startActivity(new Intent(LoginActivity.this,WhatsAppActivity.class));
+                        finish();
                     }
                 });
-                return;
+                break;
             case R.id.btn_signup:
-                startActivity(new Intent(this,SignUpActivity.class));
+                startActivity(new Intent(LoginActivity.this,SignUpActivity.class));
                 finish();
-                return;
-            default:
-                return;
+                break;
         }
     }
 }
